@@ -17,10 +17,10 @@ class NewTaskSheet : BottomSheetDialogFragment()
     private lateinit var taskViewModel: TaskViewModel
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
-        taskViewModel= ViewModelProvider(activity).get(TaskViewModel::class.java)
+        taskViewModel = ViewModelProvider(activity).get(TaskViewModel::class.java)
         binding.saveButton.setOnClickListener {
             saveAction()
         }
