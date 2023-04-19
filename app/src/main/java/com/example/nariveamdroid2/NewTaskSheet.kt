@@ -12,7 +12,7 @@ import com.example.nariveamdroid2.databinding.FragmentNewTaskSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class NewTaskSheet(var taskItem: TaskItem) : BottomSheetDialogFragment()
+class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 {
     private lateinit var binding: FragmentNewTaskSheetBinding
     private lateinit var taskViewModel: TaskViewModel

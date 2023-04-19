@@ -6,7 +6,7 @@ import java.util.*
 
 class TaskItem (
   //  var image: String,
-    var name: String,
+    var name: String?,
     var desc: String,
     var dueTime: LocalTime?,
     var completedDate: LocalDate?,
