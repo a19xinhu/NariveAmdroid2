@@ -16,22 +16,13 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
 {
     private lateinit var binding: FragmentNewTaskSheetBinding
     private lateinit var taskViewModel: TaskViewModel
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
-
+        //if taskItem is not null
         if (taskItem != null)
         {
             binding.taskTitle.text = "Edit Task"
-            val editable = Editable.Factory.getInstance()
-            binding.name.text = editable.newEditable(taskItem!!.name)
-            binding.desc.text = editable.newEditable(taskItem!!.desc)
-          /*  if(taskItem!!.dueTime != null){
-                dueTime = taskItem!!.dueTime!!
-                updateTimeButtonText()
-            }*/
         }
         else
         {
@@ -41,31 +32,32 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
         binding.saveButton.setOnClickListener {
             saveAction()
         }
-    }
+        binding.saveButton50.setOnClickListener {
+            saveAction50()
+        }
 
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View{
         binding = FragmentNewTaskSheetBinding.inflate(inflater,container,false)
         return binding.root
     }
 
-    private fun saveAction() {
-        val name = binding.name.text.toString()
-        val desc = binding.desc.text.toString()
-        if(taskItem == null)
-        {
-            val newTask = TaskItem(name,desc,null,null)
-            taskViewModel.addTaskItem(newTask)
-        }
-        else
-        {
-            taskViewModel.updateTaskItem(taskItem!!.id, name, desc, null)
-        }
-        binding.name.setText("")
-        binding.desc.setText("")
+    private fun saveAction()
+    {
+        val newTask = TaskItem()
+        taskViewModel.addTaskItem(newTask)
+        dismiss()
+    }
+
+    private fun saveAction50()
+    {
+       for (i in 0.. 49){
+           val newTask = TaskItem()
+           taskViewModel.addTaskItem(newTask)
+       }
         dismiss()
     }
 }

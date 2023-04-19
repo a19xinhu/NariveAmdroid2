@@ -11,11 +11,11 @@ class TaskItemAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskItemViewHolder {
         val from = LayoutInflater.from(parent.context)
         val binding = TaskItemCellBinding.inflate(from,parent,false)
-        return TaskItemViewHolder(parent.context,binding)
+        return TaskItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TaskItemViewHolder, position: Int) {
-        holder.bindTaskItem(taskItem[position])
+        /*holder.bindTaskItem(taskItem[position])*/
     }
 
     override fun getItemCount(): Int = taskItem.size

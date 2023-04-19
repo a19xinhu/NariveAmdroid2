@@ -22,30 +22,9 @@
             android:contentDescription="@string/checkbox"
             android:id="@+id/completeButton"
             android:layout_marginHorizontal="15dp"
-            android:src="@drawable/rating_1"
+            android:src="@drawable/rating_5"
             android:backgroundTint="@android:color/transparent"
             />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/name"
-            android:text="@string/place_holder"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            />
-
-        <TextView
-            android:layout_marginHorizontal="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/dueTime"
-            android:text="@string/place_holder"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_gravity="center"
-            />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
