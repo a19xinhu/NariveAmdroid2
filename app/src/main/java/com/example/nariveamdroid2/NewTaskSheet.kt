@@ -19,15 +19,8 @@ class NewTaskSheet(var taskItem: TaskItem?) : BottomSheetDialogFragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val activity = requireActivity()
-        //if taskItem is not null
-        if (taskItem != null)
-        {
-            binding.taskTitle.text = "Edit Task"
-        }
-        else
-        {
-            binding.taskTitle.text = "New Task"
-        }
+
+        binding.taskTitle.text = "New Task"
         taskViewModel = ViewModelProvider(activity).get(TaskViewModel::class.java)
         binding.saveButton.setOnClickListener {
             saveAction()
